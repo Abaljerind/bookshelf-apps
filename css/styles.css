@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Radio Canada Big", sans-serif;
+  height: 100vh;
+  background-color: #262c40;
+}
+
+header {
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: center;
+  flex-direction: column;
+}
+
+.top-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-header h1 {
+  margin-right: 2rem;
+  font-weight: 600;
+  font-size: 1.85em;
+  color: #f2f7fb;
+}
+
+.top-header #search-book {
+  width: 38%;
+  height: 2.25rem;
+  border: 2px solid #414e6e;
+  border-radius: 6px;
+  padding: 2px 28px 2px 6px;
+  outline: 1px solid #6374ae;
+  background-image: url(/assets/img/svgviewer-output.svg);
+  background-position: 33.6rem 9px;
+  background-repeat: no-repeat;
+  background-size: 1.15rem;
+}
+
+.top-header #search-book::placeholder {
+  color: #414e6e;
+}
+
+.bottom-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  background-color: #4a5989;
+  border-radius: 10px;
+  margin: 12px auto;
+}
+
+.bottom-header img {
+  width: 160px;
+  border-radius: 20px;
+  height: 80px;
+  padding: 10px 12px 10px 16px;
+}
+
+.bottom-header .quotes {
+  padding: 0 12px 0 6px;
+  font-size: 1.24em;
+  color: #b9cfe8;
+}
+.bottom-header .quotes q {
+  color: #e7f0f8;
+}
