@@ -18,30 +18,24 @@
   <body>
     <!-- header -->
     <header>
-      <!-- top-header -->
+      <!-- top header -->
       <div class="top-header">
-        <h1 class="dashboard">Dashboard</h1>
-        <input
-          type="search"
-          name="search-book"
-          id="search-book"
-          placeholder="Silahkan mencari buku seperti novel, komik, dan sebagainya."
-          autocomplete="on"
-          size="60"
-        />
+        <h1>Book<span>shelf</span></h1>
+        <form id="searchBook">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Silahkan mencari buku seperti novel, komik, dan sebagainya."
+            size="55"
+          />
+          <input type="submit" value="Cari" name="search" />
+        </form>
       </div>
-
-      <!-- bottom-header -->
-      <div class="bottom-header">
-        <img src="assets/img/quotes-of-the-day.png" alt="quotes of the day" />
-        <p class="quotes">
-          <q
-            >Reading is a journey. Enjoy every word and celebrate every page.</q
-          >
-          &mdash; chris stephenson
-        </p>
-      </div>
+      <!-- end top header -->
     </header>
+    <!-- end header -->
+
     <!-- script -->
     <script src="js/app.js"></script>
   </body>
