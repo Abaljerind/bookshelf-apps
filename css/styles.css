@@ -28,7 +28,7 @@ header .top-header {
 }
 
 header .top-header h1 {
-  padding-right: 16px;
+  margin-left: 12px;
   font-size: 2.18em;
   letter-spacing: 2px;
   color: #f2f7fb;
