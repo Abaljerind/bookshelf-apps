@@ -20,6 +20,7 @@ header {
   background-color: #414e6e;
   display: flex;
   padding: 12px 16px;
+  /* flex-direction: column; */
 }
 
 header .top-header {
