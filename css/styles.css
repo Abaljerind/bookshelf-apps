@@ -37,3 +37,38 @@ header .top-header h1 {
 header .top-header h1 span {
   color: #839dd1;
 }
+
+header .top-header form#searchBook {
+  width: 100%;
+  padding: 12px;
+  margin-left: 10rem;
+}
+
+header .top-header form#searchBook input[type="search"] {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 6px;
+  margin-right: 12px;
+  border-color: #414e6e;
+  outline: 1px solid #414e6e;
+}
+
+header .top-header form#searchBook input[type="search"]::placeholder {
+  outline: 1px solid #839dd1;
+}
+
+header .top-header form#searchBook input[type="submit"] {
+  padding: 8px 24px;
+  background-color: #839dd1;
+  border: none;
+  border-radius: 6px;
+  color: #f2f7fb;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 5px 10px 12px -10px rgba(38, 44, 64, 1);
+}
+
+header .top-header form#searchBook input[type="submit"]:hover {
+  cursor: pointer;
+}
