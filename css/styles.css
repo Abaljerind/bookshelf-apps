@@ -19,8 +19,9 @@ header {
   /* coba nanti dicek kalo bg-color dihapus cocok ga */
   background-color: #414e6e;
   display: flex;
+  align-items: center;
   padding: 12px 16px;
-  /* flex-direction: column; */
+  flex-direction: column;
 }
 
 header .top-header {
@@ -76,4 +77,31 @@ header .top-header form#searchBook input[type="submit"] {
 
 header .top-header form#searchBook input[type="submit"]:hover {
   cursor: pointer;
+}
+
+header .bottom-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 14px;
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
+
+header .bottom-header img {
+  width: 100px;
+  border-radius: 12px;
+}
+
+header .bottom-header p.quotes {
+  width: 70%;
+  color: #839dd1;
+  font-size: 1.2em;
+  word-spacing: 1px;
+  /* font-weight: 600; */
+}
+
+header .bottom-header p.quotes q {
+  color: #f2f7fb;
 }
