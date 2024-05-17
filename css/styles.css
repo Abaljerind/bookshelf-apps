@@ -62,19 +62,16 @@ header .top-header form#searchBook input[type="search"]::placeholder {
   outline: 1px solid #839dd1;
 }
 
-header .top-header form#searchBook input[type="submit"] {
+header .top-header form#searchBook button[type="submit"] {
   padding: 9.25px 24px;
   background-color: #839dd1;
-  border: none;
+  border: 0;
   border-radius: 6px;
   color: #f2f7fb;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   box-shadow: 5px 10px 12px -10px rgba(38, 44, 64, 1);
-}
-
-header .top-header form#searchBook input[type="submit"]:hover {
   cursor: pointer;
 }
 
