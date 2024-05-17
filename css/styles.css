@@ -11,17 +11,16 @@ body {
   max-width: 960px;
   width: 80%;
   margin: 0 auto;
-  /* nanti hapus border dibawah ini */
-  /* border: 2px solid black; */
 }
 
 header {
-  /* coba nanti dicek kalo bg-color dihapus cocok ga */
   background-color: #414e6e;
   display: flex;
   align-items: center;
   padding: 12px 16px;
   flex-direction: column;
+  border: 1px solid black;
+  border-radius: 12px;
 }
 
 header .top-header {
