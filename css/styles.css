@@ -133,6 +133,7 @@ main .bookshelves .bookshelf h3 {
   font-weight: 600;
   text-transform: capitalize;
   margin-bottom: 0.3rem;
+  color: #f2f7fb;
 }
 
 main .bookshelves .bookshelf p {
@@ -142,6 +143,7 @@ main .bookshelves .bookshelf p {
 
 main .bookshelves .bookshelf p span#jumlahBuku {
   font-weight: 700;
+  color: #839dd1;
 }
 
 main .bookshelves .bookshelf table {
@@ -154,6 +156,7 @@ main .bookshelves .bookshelf table th {
   padding: 0.4rem 0;
   border-top: 1px solid #f2f7fb;
   border-bottom: 1px solid #f2f7fb;
+  color: #839dd1;
 }
 
 main
