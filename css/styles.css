@@ -105,15 +105,12 @@ header .bottom-header p.quotes q {
   color: #f2f7fb;
 }
 
-/* main {
-    display: flex;
-  } */
-
 main .bookshelves {
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  row-gap: 1rem;
 }
 
 main .bookshelves .bookshelf {
