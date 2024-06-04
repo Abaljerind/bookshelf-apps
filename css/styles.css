@@ -101,3 +101,68 @@ header .bottom-header p.quotes {
 header .bottom-header p.quotes q {
   color: #f2f7fb;
 }
+
+main .bookshelves {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 1rem;
+}
+
+main .bookshelves .bookshelf {
+  width: 60%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #414e6e;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+main .bookshelves .bookshelf h3 {
+  font-size: 1.6em;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.3rem;
+  color: #f2f7fb;
+}
+
+main .bookshelves .bookshelf p {
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+
+main .bookshelves .bookshelf p span#jumlahBuku {
+  font-weight: 700;
+  color: #839dd1;
+}
+
+main .bookshelves .bookshelf table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+main .bookshelves .bookshelf table th {
+  padding: 0.4rem 0;
+  border-top: 1px solid #f2f7fb;
+  border-bottom: 1px solid #f2f7fb;
+  color: #839dd1;
+}
+
+main
+  .bookshelves
+  .bookshelf
+  table
+  tr:not(:nth-child(1))
+  td:nth-child(3)
+  #status {
+  padding: 0 0.5rem;
+  background-color: #414e6e;
+  border: none;
+  font-size: 0.95em;
+  text-transform: capitalize;
+}
