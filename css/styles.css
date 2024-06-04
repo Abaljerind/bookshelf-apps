@@ -127,3 +127,31 @@ main .bookshelves .bookshelf {
   border: 1px solid black;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+
+main .bookshelves .bookshelf h3 {
+  font-size: 1.6em;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.3rem;
+}
+
+main .bookshelves .bookshelf p {
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+
+main .bookshelves .bookshelf p span#jumlahBuku {
+  font-weight: 700;
+}
+
+main .bookshelves .bookshelf table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+main .bookshelves .bookshelf table th {
+  padding: 0.4rem 0;
+  border-top: 1px solid #f2f7fb;
+  border-bottom: 1px solid #f2f7fb;
+}
