@@ -185,7 +185,28 @@
 
       <!-- form input book -->
       <section class="input_section">
-        <!-- didalem sini form -->
+        <h3>masukkan buku baru</h3>
+        <form id="inputBook">
+          <div class="input">
+            <label for="titleBook">Judul</label><br />
+            <input type="text" name="titleBook" id="titleBook" required />
+          </div>
+          <div class="input">
+            <label for="authorBook">Penulis</label><br />
+            <input type="text" name="authorBook" id="authorBook" required />
+          </div>
+          <div class="input">
+            <label for="statusBook">Status</label><br />
+            <select name="statusBook" id="statusBook">
+              <option value="unfinished">sedang dibaca</option>
+              <option value="finished">selesai dibaca</option>
+            </select>
+          </div>
+          <div class="input">
+            <label for="yearBook">Tahun</label><br />
+            <input type="number" name="yearBook" id="yearBook" required />
+          </div>
+        </form>
       </section>
       <!-- end form input book -->
     </main>
