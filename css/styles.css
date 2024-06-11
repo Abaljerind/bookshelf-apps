@@ -22,6 +22,7 @@ body {
   width: 80%;
 }
 
+/* header */
 .header {
   background-color: var(--bg-color-dark);
   border-radius: 12px;
@@ -33,6 +34,7 @@ body {
   align-items: center;
 }
 
+/* top */
 .top {
   width: 100%;
   display: grid;
@@ -80,6 +82,7 @@ body {
   cursor: pointer;
 }
 
+/* bottom */
 .bottom {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -99,4 +102,71 @@ body {
 
 .bottom p q {
   color: var(--text-light);
+}
+
+/* main */
+main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  margin-top: 1rem;
+}
+
+/* unfinished */
+.bookshelves .unfinished {
+  margin-bottom: 1rem;
+}
+
+/* unfinished & finished */
+.bookshelves .unfinished,
+.bookshelves .finished {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background-color: var(--bg-color-dark);
+}
+
+.unfinished h4,
+.finished h4 {
+  font-size: 1.25em;
+  color: var(--text-light);
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.unfinished p,
+.finished p {
+  font-size: 1em;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.unfinished p #jumlahBuku,
+.finished p #jumlahBuku {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.unfinished table,
+.finished table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.unfinished table th,
+.finished table th {
+  padding: 0.4rem 0;
+  border-top: 1px solid var(--text-light);
+  border-bottom: 1px solid var(--text-light);
+  color: var(--text-dark);
+}
+
+.unfinished table tr:not(:nth-child(1)) td:nth-child(3) #status,
+.finished table tr:not(:nth-child(1)) td:nth-child(3) #status {
+  padding: 0 0.5rem;
+  background-color: var(--bg-color-dark);
+  border: none;
+  font-size: 0.95em;
+  color: var(--text-light);
+  text-transform: capitalize;
 }
