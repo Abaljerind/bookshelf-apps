@@ -20,6 +20,14 @@ body {
   margin: 25px auto;
   max-width: 960px;
   width: 80%;
+
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "unfinished input_section"
+    "finished input_section"
+    "footer footer";
+  grid-template-columns: 1.5fr 1fr;
 }
 
 /* header */
@@ -29,6 +37,7 @@ body {
   border: 3px solid rgba(0, 0, 0, 0.5);
   padding: 12px 16px;
 
+  grid-area: header;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -106,19 +115,23 @@ body {
 
 /* main */
 main {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
   margin-top: 1rem;
 }
 
 /* unfinished */
-.bookshelves .unfinished {
+.unfinished {
+  grid-area: unfinished;
   margin-bottom: 1rem;
 }
 
+/* finished */
+.finished {
+  grid-area: finished;
+}
+
 /* unfinished & finished */
-.bookshelves .unfinished,
-.bookshelves .finished {
+.unfinished,
+.finished {
   padding: 12px 16px;
   border-radius: 12px;
   background-color: var(--bg-color-dark);
