@@ -1,0 +1,19 @@
+:root {
+  --text-light: #f2f7fb;
+  --bg-color-dark: #262c40;
+  --text-dark: #d3e2f2;
+  --bg-color-light: #9cb6dd;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color-dark);
+  font-size: 16px;
+  font-family: "Radio Canada", sans-serif;
+  margin: 50px;
+}
