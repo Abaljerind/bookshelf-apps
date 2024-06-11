@@ -248,3 +248,21 @@ main {
   font-weight: 700;
   font-size: 1em;
 }
+
+/* footer */
+footer {
+  grid-area: footer;
+
+  margin-top: 1rem;
+  padding: 16px 12px;
+  border-radius: 12px;
+  background-color: var(--bg-color-dark);
+  text-align: center;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+footer p span {
+  color: var(--text-dark);
+  font-weight: 700;
+}
