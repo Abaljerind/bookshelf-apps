@@ -4,6 +4,7 @@
   --bg-color-dark: #262c40;
   --text-dark: #d3e2f2;
   --bg-color-light: #9cb6dd;
+  --bg-color-semi: #839dd1;
 }
 
 * {
@@ -16,5 +17,70 @@ body {
   background-color: var(--bg-color-body);
   font-size: 16px;
   font-family: "Radio Canada", sans-serif;
-  margin: 50px;
+  margin: 25px auto;
+  max-width: 960px;
+  width: 80%;
+}
+
+.header {
+  background-color: var(--bg-color-dark);
+  border-radius: 12px;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  padding: 12px 16px;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.top {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  place-items: center;
+  margin-top: 1rem;
+}
+
+.top h1 {
+  justify-self: start;
+  color: var(--text-light);
+  font-size: 2em;
+}
+
+.top h1 span {
+  color: var(--bg-color-light);
+}
+
+.top #searchBook {
+  justify-self: end;
+}
+
+#searchBook input {
+  height: 38px;
+  padding: 0 26px 0 12px;
+  border-radius: 6px;
+  margin-right: 12px;
+  border-color: var(--bg-color-dark);
+  outline: 1px solid var(--bg-color-dark);
+  background-image: url(/assets/img/svgviewer-output.svg);
+  background-position: 26.65rem 9px;
+  background-repeat: no-repeat;
+  background-size: 1.15rem;
+}
+
+#searchBook button {
+  padding: 9.25px 24px;
+  background-color: var(--bg-color-semi);
+  border: none;
+  border-radius: 6px;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+img {
+  width: 25%;
+  margin-top: 50px;
 }
