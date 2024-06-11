@@ -20,14 +20,6 @@ body {
   margin: 25px auto;
   max-width: 960px;
   width: 80%;
-
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "unfinished input_section"
-    "finished input_section"
-    "footer footer";
-  grid-template-columns: 1.5fr 1fr;
 }
 
 /* header */
@@ -37,7 +29,6 @@ body {
   border: 3px solid rgba(0, 0, 0, 0.5);
   padding: 12px 16px;
 
-  grid-area: header;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -115,6 +106,12 @@ body {
 
 /* main */
 main {
+  display: grid;
+  grid-template-areas:
+    "unfinished input_section"
+    "finished input_section";
+  grid-template-columns: 1.5fr 1fr;
+  column-gap: 1rem; /* Add gap for spacing between columns */
   margin-top: 1rem;
 }
 
@@ -182,4 +179,12 @@ main {
   font-size: 0.95em;
   color: var(--text-light);
   text-transform: capitalize;
+}
+
+/* input_section */
+.input_section {
+  grid-area: input_section;
+  background-color: var(--bg-color-dark);
+  border-radius: 12px;
+  padding: 12px 16px;
 }
