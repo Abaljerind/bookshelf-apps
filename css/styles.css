@@ -2,7 +2,7 @@
   --bg-color-body: #18181b;
   --text-light: #f2f7fb;
   --bg-color-dark: #262c40;
-  --text-dark: #d3e2f2;
+  --text-dark: #839dd1;
   --bg-color-light: #9cb6dd;
   --bg-color-semi: #839dd1;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 .top h1 span {
-  color: var(--bg-color-light);
+  color: var(--text-dark);
 }
 
 .top #searchBook {
@@ -80,7 +80,23 @@ body {
   cursor: pointer;
 }
 
-img {
-  width: 25%;
-  margin-top: 50px;
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  place-items: center;
+  margin-top: 20px;
+}
+
+.bottom img {
+  width: 100px;
+  border-radius: 12px;
+}
+
+.bottom p {
+  font-size: 1.12em;
+  color: var(--text-dark);
+}
+
+.bottom p q {
+  color: var(--text-light);
 }
