@@ -1,4 +1,5 @@
 :root {
+  --bg-color-body: #18181b;
   --text-light: #f2f7fb;
   --bg-color-dark: #262c40;
   --text-dark: #d3e2f2;
@@ -12,7 +13,7 @@
 }
 
 body {
-  background-color: var(--bg-color-dark);
+  background-color: var(--bg-color-body);
   font-size: 16px;
   font-family: "Radio Canada", sans-serif;
   margin: 50px;
