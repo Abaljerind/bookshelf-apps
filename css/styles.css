@@ -87,6 +87,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchBook button:hover {
+  background-color: var(--bg-color-dark);
+  outline: 1px solid var(--bg-color-semi);
 }
 
 /* bottom */
@@ -192,6 +198,15 @@ main {
   color: var(--text-light);
   text-transform: capitalize;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.unfinished table tr:not(:nth-child(1)) td:nth-child(3) #status:hover,
+.finished table tr:not(:nth-child(1)) td:nth-child(3) #status:hover,
+.unfinished table tr:not(:nth-child(1)) td:nth-child(4) button:hover,
+.finished table tr:not(:nth-child(1)) td:nth-child(4) button:hover {
+  background-color: var(--bg-color-dark);
+  outline: 1px solid var(--bg-color-semi);
 }
 
 /* input_section */
@@ -252,6 +267,12 @@ main {
   color: var(--text-light);
   font-weight: 700;
   font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+#inputBook button:hover {
+  background-color: var(--bg-color-dark);
+  outline: 1px solid var(--bg-color-semi);
 }
 
 /* footer */
