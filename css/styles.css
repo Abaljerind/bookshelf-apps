@@ -268,7 +268,7 @@ footer p span {
 }
 
 /* Responsive Breakpoint */
-@media (max-width: 812px) {
+@media (max-width: 1024px) {
   body {
     margin: 25px auto;
     width: 90%;
