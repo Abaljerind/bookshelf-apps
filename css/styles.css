@@ -311,4 +311,8 @@ footer p span {
     grid-template-columns: 2fr;
     row-gap: 1rem;
   }
+
+  .unfinished {
+    margin-bottom: 0;
+  }
 }
