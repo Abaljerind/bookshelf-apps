@@ -266,3 +266,49 @@ footer p span {
   color: var(--text-dark);
   font-weight: 700;
 }
+
+/* Responsive Breakpoint */
+@media (max-width: 812px) {
+  body {
+    margin: 25px auto;
+    width: 90%;
+  }
+
+  .top {
+    grid-template-columns: 2fr;
+    place-items: center;
+  }
+
+  .top h1 {
+    justify-self: center;
+    font-size: 2.25em;
+  }
+
+  .top #searchBook {
+    justify-self: center;
+    margin-top: 1rem;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom img {
+    display: none;
+  }
+
+  .bottom p {
+    font-size: 1.15em;
+    text-align: center;
+    width: 82%;
+  }
+
+  main {
+    grid-template-areas:
+      "input_section"
+      "unfinished"
+      "finished";
+    grid-template-columns: 2fr;
+    row-gap: 1rem;
+  }
+}
