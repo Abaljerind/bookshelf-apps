@@ -338,4 +338,29 @@ footer p span {
     text-align: justify;
     width: 95%;
   }
+
+  .unfinished,
+  .finished {
+    overflow-x: auto;
+  }
+
+  .unfinished table,
+  .finished table {
+    width: 100%;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--text-light);
+  }
+
+  .unfinished table th,
+  .finished table th {
+    border-left: 1px solid var(--text-light);
+    border-right: 1px solid var(--text-light);
+  }
+
+  .unfinished table td,
+  .finished table td {
+    border-left: 1px solid var(--text-light);
+    border-right: 1px solid var(--text-light);
+    padding: 4px;
+  }
 }
