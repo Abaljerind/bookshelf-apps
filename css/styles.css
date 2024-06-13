@@ -350,8 +350,10 @@ footer p span {
   }
 
   #searchBook input {
+    padding-right: 12px;
     width: 100%;
     background-image: none;
+    text-overflow: ellipsis;
   }
 
   #searchBook button {
