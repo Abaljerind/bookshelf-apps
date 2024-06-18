@@ -5,6 +5,7 @@ TODO::  a. menambahkan data buku
 TODO::  c. dapat memindahkan buku antar rak belum selesai dan rak sudah selesai
 TODO::  d. dapat menghapus data buku
 TODO::  e. manfaatkan local storage untuk penyimpanan data buku
+TODO::  f. cek validasi input, untuk bagian year hanya bisa 4 digit saja dan hanya menerima angka saja
 
 ? 2. tambahan fitur
 TODO::  a. fitur pencarian
