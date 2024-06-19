@@ -66,24 +66,10 @@ function generateBookObject(id, titleBook, author, status, year) {
 document.addEventListener(RENDER_EVENT, function () {
   // console.log(bookshelves);
   const uncompletedBookList = document.getElementById("not-completed");
-  uncompletedBookList.innerHTML = "";
 
-  // Memasukkan header hanya cukup sekali
-  const trHead = document.createElement("tr");
-
-  const thJudul = document.createElement("th");
-  const thPenulis = document.createElement("th");
-  const thStatus = document.createElement("th");
-  const thTahun = document.createElement("th");
-
-  thJudul.innerText = "Judul";
-  thPenulis.innerText = "Penulis";
-  thStatus.innerText = "Status";
-  thTahun.innerText = "Tahun";
-
-  thStatus.setAttribute("colspan", "2");
-  trHead.append(thJudul, thPenulis, thStatus, thTahun);
-  uncompletedBookList.append(trHead);
+  while (uncompletedBookList.rows.length > 1) {
+    uncompletedBookList.deleteRow(1);
+  }
 
   for (const bookItem of bookshelves) {
     const bookElement = makeBook(bookItem);
