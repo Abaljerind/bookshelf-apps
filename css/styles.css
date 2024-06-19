@@ -185,9 +185,14 @@ main {
   color: var(--text-dark);
 }
 
+.unfinished table th:nth-child(3),
+.finished table th:nth-child(3) {
+  width: 35%;
+}
+
 .unfinished table tr:not(:nth-child(1)) td:nth-child(3) #status,
 .finished table tr:not(:nth-child(1)) td:nth-child(3) #status,
-.unfinished table tr:not(:nth-child(1)) td:nth-child(4) button,
+.unfinished table #deleteBook,
 .finished table tr:not(:nth-child(1)) td:nth-child(4) button {
   padding: 0 0.5rem;
   margin-top: 4px;
@@ -203,7 +208,7 @@ main {
 
 .unfinished table tr:not(:nth-child(1)) td:nth-child(3) #status:hover,
 .finished table tr:not(:nth-child(1)) td:nth-child(3) #status:hover,
-.unfinished table tr:not(:nth-child(1)) td:nth-child(4) button:hover,
+.unfinished table #deleteBook:hover,
 .finished table tr:not(:nth-child(1)) td:nth-child(4) button:hover {
   background-color: var(--bg-color-dark);
   outline: 1px solid var(--bg-color-semi);
@@ -341,6 +346,11 @@ footer p span {
   .unfinished {
     margin-bottom: 0;
   }
+
+  .unfinished table th:nth-child(3),
+  .finished table th:nth-child(3) {
+    width: 32%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -383,9 +393,19 @@ footer p span {
     padding-inline: 8px;
   }
 
+  .unfinished table th:nth-child(3),
+  .finished table th:nth-child(3) {
+    width: 42%;
+  }
+
   .unfinished table td,
   .finished table td {
-    border-bottom: 1px solid var(--text-light);
+    /* border-bottom: 1px solid var(--text-light); */
     padding: 2px;
+  }
+
+  .unfinished table #deleteBook {
+    margin-top: 6px;
+    margin-left: 4px;
   }
 }
