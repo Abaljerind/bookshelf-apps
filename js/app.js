@@ -66,3 +66,72 @@ function generateBookObject(id, titleBook, author, status, year) {
 document.addEventListener(RENDER_EVENT, function () {
   console.log(bookshelves);
 });
+
+function makeBook(bookObject) {
+  const trHead = document.createElement("tr");
+
+  const thJudul = document.createElement("th");
+  const thPenulis = document.createElement("th");
+  const thStatus = document.createElement("th");
+  const thTahun = document.createElement("th");
+
+  thJudul.innerText = "Judul";
+  thPenulis.innerText = "Penulis";
+  thStatus.innerText = "Status";
+  thTahun.innerText = "Tahun";
+  // thStatus
+  thStatus.setAttribute("colspan", "2");
+
+  trHead.append(thJudul, thPenulis, thStatus, thTahun);
+
+  // trHead di append ke table
+  const tableNotCompleted = document.getElementById("not-completed");
+  tableNotCompleted.append(trHead);
+
+  // data table
+  const trData = document.createElement("tr");
+
+  const tdJudul = document.createElement("td");
+  const tdPenulis = document.createElement("td");
+  const tdStatus = document.createElement("td");
+  const tdButton = document.createElement("button");
+  const tdTahun = document.createElement("td");
+
+  // trData dikasih attribute id
+  trData.setAttribute("id", `book-${bookObject.id}`);
+
+  // tdStatus
+  tdStatus.append(statusSelect);
+
+  // tdButton
+  tdButton.setAttribute("id", "deleteBook");
+  tdButton.setAttribute("type", "button");
+
+  // tdStatus >> statusSelect
+  const statusSelect = document.createElement("select");
+  statusSelect.setAttribute("name", "status");
+  statusSelect.setAttribute("id", "status");
+
+  // tdStatus >> statusSelect >> option
+  const optionUnread = document.createElement("option");
+  const optionRead = document.createElement("option");
+
+  optionUnread.setAttribute("value", "unfinished");
+  optionUnread.setAttribute("selected", "");
+  optionRead.setAttribute("value", "finished");
+
+  tdJudul.innerText = bookObject.titleBook;
+  tdPenulis.innerText = bookObject.author;
+  // TODO:: ini statusSelect coba ganti jadi innerHTML kalo ga bisa
+  statusSelect.innerText = bookObject.status;
+  tdButton.innerText = "Hapus";
+  tdTahun.innerText = bookObject.year;
+
+  trData.append(tdJudul, tdPenulis, tdStatus, tdButton, tdTahun);
+
+  // <table id="not-completed">
+  // trData di append ke table
+  tableNotCompleted.append(trData);
+
+  return tableNotCompleted;
+}
