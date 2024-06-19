@@ -77,6 +77,7 @@ document.addEventListener(RENDER_EVENT, function () {
   }
 });
 
+// method untuk menambahkan buku
 function makeBook(bookObject) {
   // data table
   const trData = document.createElement("tr");
@@ -127,9 +128,43 @@ function makeBook(bookObject) {
 
   trData.append(tdJudul, tdPenulis, tdStatus, tdButton, tdTahun);
 
-  // <table id="not-completed">
-  // trData di append ke table
-  // tableNotCompleted.append(trData);
+  if (bookObject.status == "finished") {
+    tdStatus.addEventListener("change", function () {
+      undoBookFromCompleted(bookObject.id);
+    });
+
+    tdButton.addEventListener("click", function () {
+      removeBook(bookObject.id);
+    });
+  } else {
+    tdStatus.addEventListener("change", function () {
+      addBookToCompleted(bookObject.id);
+    });
+
+    tdButton.addEventListener("click", function () {
+      removeBook(bookObject.id);
+    });
+  }
 
   return trData;
+}
+
+// method untuk menambahkan buku ke rak completed
+function addBookToCompleted(bookId) {
+  const book = findBook(bookId);
+
+  if (book == null) return;
+
+  book.status = "finished";
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
+
+// function untuk mencari book id
+function findBook(bookId) {
+  for (const bookItem of bookshelves) {
+    if (bookItem.id === bookId) {
+      return bookItem;
+    }
+  }
+  return null;
 }
