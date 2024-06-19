@@ -73,7 +73,9 @@ document.addEventListener(RENDER_EVENT, function () {
 
   for (const bookItem of bookshelves) {
     const bookElement = makeBook(bookItem);
-    uncompletedBookList.append(bookElement);
+    if (bookItem.status == "unfinished") {
+      uncompletedBookList.append(bookElement);
+    }
   }
 });
 
@@ -122,7 +124,6 @@ function makeBook(bookObject) {
 
   tdJudul.innerText = bookObject.titleBook;
   tdPenulis.innerText = bookObject.author;
-  // TODO:: ini statusSelect coba ganti jadi innerHTML kalo ga bisa
   tdButton.innerText = "Hapus";
   tdTahun.innerText = bookObject.year;
 
