@@ -64,10 +64,11 @@ function generateBookObject(id, titleBook, author, status, year) {
 
 // mengecek listener dari RENDER_EVENT untuk melihat data berhasil diinput ke bookshelves atau tidak.
 document.addEventListener(RENDER_EVENT, function () {
-  console.log(bookshelves);
-});
+  // console.log(bookshelves);
+  const uncompletedBookList = document.getElementById("not-completed");
+  uncompletedBookList.innerHTML = "";
 
-function makeBook(bookObject) {
+  // Memasukkan header hanya cukup sekali
   const trHead = document.createElement("tr");
 
   const thJudul = document.createElement("th");
@@ -79,15 +80,18 @@ function makeBook(bookObject) {
   thPenulis.innerText = "Penulis";
   thStatus.innerText = "Status";
   thTahun.innerText = "Tahun";
-  // thStatus
+
   thStatus.setAttribute("colspan", "2");
-
   trHead.append(thJudul, thPenulis, thStatus, thTahun);
+  uncompletedBookList.append(trHead);
 
-  // trHead di append ke table
-  const tableNotCompleted = document.getElementById("not-completed");
-  tableNotCompleted.append(trHead);
+  for (const bookItem of bookshelves) {
+    const bookElement = makeBook(bookItem);
+    uncompletedBookList.append(bookElement);
+  }
+});
 
+function makeBook(bookObject) {
   // data table
   const trData = document.createElement("tr");
 
@@ -99,9 +103,6 @@ function makeBook(bookObject) {
 
   // trData dikasih attribute id
   trData.setAttribute("id", `book-${bookObject.id}`);
-
-  // tdStatus
-  tdStatus.append(statusSelect);
 
   // tdButton
   tdButton.setAttribute("id", "deleteBook");
@@ -117,13 +118,24 @@ function makeBook(bookObject) {
   const optionRead = document.createElement("option");
 
   optionUnread.setAttribute("value", "unfinished");
-  optionUnread.setAttribute("selected", "");
   optionRead.setAttribute("value", "finished");
+
+  optionUnread.innerText = "Sedang Dibaca";
+  optionRead.innerText = "Selesai Dibaca";
+
+  if (bookObject.status === "unfinished") {
+    optionUnread.setAttribute("selected", "selected");
+  } else {
+    optionRead.setAttribute("selected", "selected");
+  }
+
+  // tdStatus
+  statusSelect.append(optionUnread, optionRead);
+  tdStatus.append(statusSelect);
 
   tdJudul.innerText = bookObject.titleBook;
   tdPenulis.innerText = bookObject.author;
   // TODO:: ini statusSelect coba ganti jadi innerHTML kalo ga bisa
-  statusSelect.innerText = bookObject.status;
   tdButton.innerText = "Hapus";
   tdTahun.innerText = bookObject.year;
 
@@ -131,7 +143,7 @@ function makeBook(bookObject) {
 
   // <table id="not-completed">
   // trData di append ke table
-  tableNotCompleted.append(trData);
+  // tableNotCompleted.append(trData);
 
-  return tableNotCompleted;
+  return trData;
 }
