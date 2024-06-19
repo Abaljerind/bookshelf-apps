@@ -169,6 +169,12 @@ main {
   font-weight: 700;
 }
 
+.unfinished .table-container,
+.finished .table-container {
+  height: 118px;
+  overflow-y: auto;
+}
+
 .unfinished table,
 .finished table {
   border-collapse: collapse;
@@ -193,7 +199,7 @@ main {
 .unfinished table tr:not(:nth-child(1)) td:nth-child(3) #status,
 .finished table tr:not(:nth-child(1)) td:nth-child(3) #status,
 .unfinished table #deleteBook,
-.finished table tr:not(:nth-child(1)) td:nth-child(4) button {
+.finished table #deleteBook {
   padding: 0 0.5rem;
   margin-top: 4px;
   background-color: var(--bg-color-semi);
@@ -209,7 +215,7 @@ main {
 .unfinished table tr:not(:nth-child(1)) td:nth-child(3) #status:hover,
 .finished table tr:not(:nth-child(1)) td:nth-child(3) #status:hover,
 .unfinished table #deleteBook:hover,
-.finished table tr:not(:nth-child(1)) td:nth-child(4) button:hover {
+.finished table #deleteBook:hover {
   background-color: var(--bg-color-dark);
   outline: 1px solid var(--bg-color-semi);
 }
@@ -391,6 +397,8 @@ footer p span {
   .unfinished table th,
   .finished table th {
     padding-inline: 8px;
+    border-right: 1px solid var(--text-light);
+    border-left: 1px solid var(--text-light);
   }
 
   .unfinished table th:nth-child(3),
@@ -400,12 +408,24 @@ footer p span {
 
   .unfinished table td,
   .finished table td {
-    /* border-bottom: 1px solid var(--text-light); */
-    padding: 2px;
+    border-right: 1px solid var(--text-light);
+    border-left: 1px solid var(--text-light);
+    padding: 4px;
   }
 
-  .unfinished table #deleteBook {
-    margin-top: 6px;
-    margin-left: 4px;
+  .unfinished table td:nth-child(3),
+  .finished table td:nth-child(3) {
+    border-right: none;
+  }
+
+  .unfinished table tr:last-child,
+  .finished table tr:last-child {
+    border-bottom: 1px solid var(--text-light);
+  }
+
+  .unfinished table #deleteBook,
+  .finished table #deleteBook {
+    margin-top: 8px;
+    margin-left: 7px;
   }
 }
