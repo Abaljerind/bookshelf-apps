@@ -66,15 +66,22 @@ function generateBookObject(id, titleBook, author, status, year) {
 document.addEventListener(RENDER_EVENT, function () {
   // console.log(bookshelves);
   const uncompletedBookList = document.getElementById("not-completed");
+  const completedBookList = document.getElementById("completed");
 
   while (uncompletedBookList.rows.length > 1) {
     uncompletedBookList.deleteRow(1);
+  }
+
+  while (completedBookList.rows.length > 1) {
+    completedBookList.deleteRow(1);
   }
 
   for (const bookItem of bookshelves) {
     const bookElement = makeBook(bookItem);
     if (bookItem.status == "unfinished") {
       uncompletedBookList.append(bookElement);
+    } else {
+      completedBookList.append(bookElement);
     }
   }
 });
