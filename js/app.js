@@ -177,6 +177,17 @@ function findBook(bookId) {
   return null;
 }
 
+// function untuk mencari index book
+function findBookIndex(bookId) {
+  for (const index in bookshelves) {
+    if (bookshelves[index].id === bookId) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
 // function untuk menghapus book dari rak
 function removeBook(bookId) {
   const bookTarget = findBookIndex(bookId);
