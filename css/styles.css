@@ -163,8 +163,8 @@ main {
   color: var(--text-light);
 }
 
-.unfinished p #jumlahBuku,
-.finished p #jumlahBuku {
+.unfinished p #jumlahBukuBelumSelesai,
+.finished p #jumlahBukuSudahSelesai {
   color: var(--text-dark);
   font-weight: 700;
 }
