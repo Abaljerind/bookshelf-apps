@@ -15,6 +15,22 @@ const bookshelves = [];
 
 // custom event
 const RENDER_EVENT = "render-book";
+const SAVED_EVENT = "saved-book";
+const STORAGE_KEY = "BOOKSHELF_APPS";
+
+// function untuk cek storage pada browser
+function isStorageExist() {
+  if (typeof Storage === undefined) {
+    alert("Browser kamu tidak mendukung penyimpanan");
+    return false;
+  }
+  return true;
+}
+
+// event untuk SAVED_EVENT
+document.addEventListener("SAVED_EVENT", function () {
+  console.log(localStorage.getItem(STORAGE_KEY));
+});
 
 // event listener untuk dijalankan setelah webiste selesai dimuat
 document.addEventListener("DOMContentLoaded", function () {
@@ -45,6 +61,7 @@ function addBook() {
   bookshelves.push(bookObject);
 
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
 // method untuk mengembalikan timestamp untuk digunakan sebagai id
@@ -166,6 +183,7 @@ function addBookToCompleted(bookId) {
 
   book.status = "finished";
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
 // function untuk mencari book id
@@ -197,6 +215,7 @@ function removeBook(bookId) {
 
   bookshelves.splice(bookTarget, 1);
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
 }
 
 // function untuk mengembalikan book ke rak not-completed
@@ -207,4 +226,14 @@ function undoBookFromCompleted(bookId) {
 
   bookTarget.status = "unfinished";
   document.dispatchEvent(new Event(RENDER_EVENT));
+  saveData();
+}
+
+// function untuk menyimpan data ke local storage
+function saveData() {
+  if (isStorageExist()) {
+    const parsed = JSON.stringify(bookshelves);
+    localStorage.setItem(STORAGE_KEY, parsed);
+    document.dispatchEvent(new Event(SAVED_EVENT));
+  }
 }
