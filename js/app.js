@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
     addBook();
     submitForm.reset();
   });
+
+  if (isStorageExist()) {
+    loadDataFromStorage();
+  }
 });
 
 // method untuk menambahkan buku ke table not-completed / completed
@@ -236,4 +240,18 @@ function saveData() {
     localStorage.setItem(STORAGE_KEY, parsed);
     document.dispatchEvent(new Event(SAVED_EVENT));
   }
+}
+
+// function untuk menampilkan data yang disimpan pada local storage
+function loadDataFromStorage() {
+  const serializedData = localStorage.getItem(STORAGE_KEY);
+  let data = JSON.parse(serializedData);
+
+  if (data !== null) {
+    for (const book of data) {
+      bookshelves.push(book);
+    }
+  }
+
+  document.dispatchEvent(new Event(RENDER_EVENT));
 }
