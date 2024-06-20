@@ -176,3 +176,23 @@ function findBook(bookId) {
   }
   return null;
 }
+
+// function untuk menghapus book dari rak
+function removeBook(bookId) {
+  const bookTarget = findBookIndex(bookId);
+
+  if (bookTarget === -1) return;
+
+  bookshelves.splice(bookTarget, 1);
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
+
+// function untuk mengembalikan book ke rak not-completed
+function undoBookFromCompleted(bookId) {
+  const bookTarget = findBook(bookId);
+
+  if (bookTarget == null) return;
+
+  bookTarget.status = "unfinished";
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
