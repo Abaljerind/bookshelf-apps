@@ -1,11 +1,12 @@
 TODO::
 ? 1. lanjut bagian js
-TODO::  a. menambahkan data buku
+TODO::  a. menambahkan data buku (DONE)
 *  b. memiliki 2 rak buku (DONE)
-TODO::  c. dapat memindahkan buku antar rak belum selesai dan rak sudah selesai
-TODO::  d. dapat menghapus data buku
-TODO::  e. manfaatkan local storage untuk penyimpanan data buku
+TODO::  c. dapat memindahkan buku antar rak belum selesai dan rak sudah selesai (DONE)
+TODO::  d. dapat menghapus data buku (DONE)
+TODO::  e. manfaatkan local storage untuk penyimpanan data buku (DONE)
 TODO::  f. cek validasi input, untuk bagian year hanya bisa 4 digit saja dan hanya menerima angka saja
+TODO::  g. tambah perhitungan jumlah buku yang sudah dan sedang dibaca
 
 ? 2. tambahan fitur
 TODO::  a. fitur pencarian
