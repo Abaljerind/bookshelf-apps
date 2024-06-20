@@ -27,11 +27,6 @@ function isStorageExist() {
   return true;
 }
 
-// event untuk SAVED_EVENT
-document.addEventListener("SAVED_EVENT", function () {
-  console.log(localStorage.getItem(STORAGE_KEY));
-});
-
 // event listener untuk dijalankan setelah webiste selesai dimuat
 document.addEventListener("DOMContentLoaded", function () {
   const submitForm = document.getElementById("inputBook");
