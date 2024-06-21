@@ -85,6 +85,15 @@ document.addEventListener(RENDER_EVENT, function () {
   const uncompletedBookList = document.getElementById("not-completed");
   const completedBookList = document.getElementById("completed");
 
+  const unfinishedBook = document.getElementById("jumlahBukuBelumSelesai");
+  const finishedBook = document.getElementById("jumlahBukuSudahSelesai");
+  const unReadBook = bookshelves.filter(
+    (book) => book.status === "unfinished"
+  ).length;
+  const readBook = bookshelves.filter(
+    (book) => book.status === "finished"
+  ).length;
+
   while (uncompletedBookList.rows.length > 1) {
     uncompletedBookList.deleteRow(1);
   }
@@ -92,6 +101,9 @@ document.addEventListener(RENDER_EVENT, function () {
   while (completedBookList.rows.length > 1) {
     completedBookList.deleteRow(1);
   }
+
+  unfinishedBook.innerHTML = `${unReadBook} buku`;
+  finishedBook.innerHTML = `${readBook} buku`;
 
   for (const bookItem of bookshelves) {
     const bookElement = makeBook(bookItem);
