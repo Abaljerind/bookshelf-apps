@@ -54,7 +54,7 @@ function addBook() {
     titleBook,
     author,
     status,
-    year
+    +year
   );
 
   bookshelves.push(bookObject);
