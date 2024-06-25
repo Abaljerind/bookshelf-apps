@@ -262,3 +262,121 @@ function loadDataFromStorage() {
 
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
+
+// function untuk mengambil buku dari local storage untuk pencarian buku
+function loadBookFromStorage() {
+  const books = localStorage.getItem(STORAGE_KEY);
+  return books ? JSON.parse(books) : [];
+}
+
+// function untuk mencari buku berdasarkan judulnya
+function searchBooks(titleBook) {
+  const books = loadBookFromStorage();
+  return books.filter((book) =>
+    book.titleBook.toLowerCase().includes(titleBook.toLowerCase())
+  );
+}
+
+// event listener untuk form pencarian
+const searchForm = document.getElementById("searchBook");
+searchForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const searchInput = document.getElementById("search").value;
+  if (searchInput === "") {
+    alert("harap masukkan judul buku");
+  } else {
+    displaySearchResults(searchInput);
+  }
+});
+
+// function untuk menampilkan hasil pencarian
+function displaySearchResults(keyword) {
+  const results = searchBooks(keyword);
+
+  // hapus konten sebelumnya
+  const uncompletedBookList = document.getElementById("not-completed");
+  const completedBookList = document.getElementById("completed");
+
+  while (uncompletedBookList.rows.length > 1) {
+    uncompletedBookList.deleteRow(1);
+  }
+
+  while (completedBookList.rows.length > 1) {
+    completedBookList.deleteRow(1);
+  }
+
+  // membuat elemen untuk menampilkan buku yang dicari
+  if (results.length > 0) {
+    results.forEach((book) => {
+      // data table
+      const trData = document.createElement("tr");
+
+      const tdJudul = document.createElement("td");
+      const tdPenulis = document.createElement("td");
+      const tdStatus = document.createElement("td");
+      const tdButton = document.createElement("button");
+      const tdTahun = document.createElement("td");
+
+      // trData dikasih attribute id
+      trData.setAttribute("id", `book-${book.id}`);
+
+      // tdButton
+      tdButton.setAttribute("id", "deleteBook");
+      tdButton.setAttribute("type", "button");
+
+      // tdStatus >> statusSelect
+      const statusSelect = document.createElement("select");
+      statusSelect.setAttribute("name", "status");
+      statusSelect.setAttribute("id", "status");
+
+      // tdStatus >> statusSelect >> option
+      const optionUnread = document.createElement("option");
+      const optionRead = document.createElement("option");
+
+      optionUnread.setAttribute("value", "unfinished");
+      optionRead.setAttribute("value", "finished");
+
+      optionUnread.innerText = "Sedang Dibaca";
+      optionRead.innerText = "Selesai Dibaca";
+
+      if (book.status === "unfinished") {
+        optionUnread.setAttribute("selected", "selected");
+      } else {
+        optionRead.setAttribute("selected", "selected");
+      }
+
+      // tdStatus
+      statusSelect.append(optionUnread, optionRead);
+      tdStatus.append(statusSelect);
+
+      tdJudul.innerText = book.titleBook;
+      tdPenulis.innerText = book.author;
+      tdButton.innerText = "Hapus";
+      tdTahun.innerText = book.year;
+
+      trData.append(tdJudul, tdPenulis, tdStatus, tdButton, tdTahun);
+
+      if (book.status == "finished") {
+        statusSelect.addEventListener("change", function () {
+          undoBookFromCompleted(book.id);
+        });
+
+        tdButton.addEventListener("click", function () {
+          removeBook(book.id);
+        });
+
+        completedBookList.appendChild(trData);
+      } else {
+        statusSelect.addEventListener("change", function () {
+          addBookToCompleted(book.id);
+        });
+
+        tdButton.addEventListener("click", function () {
+          removeBook(book.id);
+        });
+
+        uncompletedBookList.appendChild(trData);
+      }
+    });
+  }
+}
