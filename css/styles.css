@@ -360,6 +360,10 @@ footer p span {
     width: 90%;
   }
 
+  .modal {
+    padding-top: 440px;
+  }
+
   .modal-content {
     width: 60%;
   }
