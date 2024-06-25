@@ -304,11 +304,70 @@ footer p span {
   font-weight: 700;
 }
 
+/* modal */
+.modal {
+  /* display: none; */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 240px;
+}
+
+.modal-content {
+  background-color: var(--bg-color-body);
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid var(--bg-color-body);
+  border-radius: 12px;
+  width: 40%;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-content #delete,
+.modal-content #cancel {
+  background-color: var(--bg-color-dark);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 2rem;
+  cursor: pointer;
+  color: var(--text-light);
+  flex: 1;
+  text-align: center;
+  font-size: 1.15em;
+}
+
 /* Responsive Breakpoint */
 @media (max-width: 1024px) {
   body {
     margin: 25px auto;
     width: 90%;
+  }
+
+  .modal-content {
+    width: 60%;
+  }
+
+  .modal-content #delete,
+  .modal-content #cancel {
+    font-size: 1em;
+    font-weight: bold;
   }
 
   .top {
@@ -363,6 +422,16 @@ footer p span {
   body {
     margin: 15px;
     max-width: 600px;
+  }
+
+  .modal-content {
+    width: 85%;
+  }
+
+  .modal-content #delete,
+  .modal-content #cancel {
+    font-size: 0.8em;
+    font-weight: bold;
   }
 
   #searchBook input {
