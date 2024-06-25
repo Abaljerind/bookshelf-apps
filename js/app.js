@@ -220,13 +220,32 @@ function findBookIndex(bookId) {
 
 // function untuk menghapus book dari rak
 function removeBook(bookId) {
-  const bookTarget = findBookIndex(bookId);
+  const deleteModal = document.getElementById("deleteModal");
+  const confirmDelete = document.getElementById("delete");
+  const cancelDelete = document.getElementById("cancel");
 
-  if (bookTarget === -1) return;
+  deleteModal.style.display = "block";
 
-  bookshelves.splice(bookTarget, 1);
-  document.dispatchEvent(new Event(RENDER_EVENT));
-  saveData();
+  confirmDelete.addEventListener("click", function () {
+    const bookTarget = findBookIndex(bookId);
+
+    if (bookTarget === -1) return;
+
+    bookshelves.splice(bookTarget, 1);
+    document.dispatchEvent(new Event(RENDER_EVENT));
+    saveData();
+    deleteModal.style.display = "none";
+  });
+
+  cancelDelete.addEventListener("click", function () {
+    deleteModal.style.display = "none";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target == deleteModal) {
+      deleteModal.style.display = "none";
+    }
+  });
 }
 
 // function untuk mengembalikan book ke rak not-completed
